@@ -1,0 +1,234 @@
+body {
+    margin: 0;
+    font-family: 'Arial Rounded MT Bold', Arial, sans-serif;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+/* Home page specific styles */
+body.home-page .content-section{
+    background: linear-gradient(to bottom right, #14d890, #7f93a3); /* Example gradient for home page */
+    padding-left: 10%;
+}
+
+/* About page specific styles */
+body.about-page {
+    background: linear-gradient(to bottom right, #d9a7c7, #8a8442); /* Slightly darker gradient */
+}
+
+/* Contact page specific styles */
+body.contact-page {
+    background: linear-gradient(to bottom right, #7f93a3, #14d890); /* Example gradient for contact page */
+}
+
+/* Contact page specific styles */
+body.collaboration-page {
+    background: linear-gradient(to bottom right, #608baf, #14d890); /* Example gradient for contact page */
+}
+
+body.prayer-meeting-materials-page {
+background: linear-gradient(to bottom right, #000000, #555);
+}
+body.islam-page {
+    background: linear-gradient(to bottom right,  #000000, #555);
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Slightly transparent */
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    z-index: 1000;
+}
+
+header .logo {
+    font-size: 24px;
+    margin-right: 20px;
+}
+
+header .logo a {
+    color: #fff;
+    text-decoration: none;
+}
+
+header nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Align nav items to the left */
+    flex-grow: 1; /* Allow nav to grow and take up available space */
+}
+
+header ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+
+header ul li {
+    margin-right: 10px; /* Reduced margin to decrease space between links */
+    position: relative;
+}
+
+header ul li:last-child {
+    margin-right: 0;
+}
+
+header ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+header ul li a:hover {
+    background-color: #555; /* Background color for hovered link */
+    border-radius: 10px; /* Rounded corners for hovered link */
+}
+
+header ul li.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+header ul li .dropdown-content {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 10px; /* Rounded corners for the dropdown container */
+    overflow: hidden; /* Ensures the dropdown items stay within the container */
+}
+
+header ul li .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    border-radius: 10px; /* Rounded corners for the dropdown items */
+    margin: 5px; /* Adds space between the rounded items */
+}
+
+header ul li .dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.content-section {
+    padding: 20px 20px; /* Reduced padding to bring content closer to the top */
+    background: transparent; /* Transparent background for scrolling effect */
+    text-align: center;
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center; /* Center items vertically */
+    justify-content: center;
+}
+
+.content-block {
+    padding: 20px;
+    background: transparent; /* Removed background */
+    border-radius: 8px;
+    width: 80%; /* Adjust width as needed */
+    margin: 20px 0; /* Reduced margin to bring content closer to the top */
+    box-shadow: none; /* Removed box shadow */
+}
+
+.content-block h1, .content-block h2 {
+    font-size: 36px;
+    margin: 10px 0;
+}
+
+.content-block p {
+    font-size: 18px;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px; /* Adjusted padding for the button */
+    margin: 20px 0; /* Adjusted margin for better spacing */
+    background-color: #4CAF50; /* Green */
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 10px; /* Rounded corners */
+    width: 50%; /* Set the width to 50% of its container */
+    transition: background-color 0.3s, transform 0.3s; /* Added transform transition */
+}
+
+.button:hover {
+    background-color: #45a049;
+    transform: scale(1.1); /* Slightly enlarge the button on hover */
+}
+
+/* Center the button horizontally */
+.button-container {
+    display: flex;
+    justify-content: center;
+}
+
+/* Islam page button style */
+.islam-page .button {
+    background-color: #4CAF50; /* Green */
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 10px; /* Rounded corners */
+    width: 50%; /* Set the width to 50% of its container */
+    transition: background-color 0.3s, transform 0.3s; /* Added transform transition */
+}
+
+.islam-page .button:hover {
+    background-color: #555; /* Background color to match header hover effect */
+    transform: scale(1.1); /* Slightly enlarge the button on hover */
+}
+
+@media (max-width: 768px) {
+    .content-block h1, .content-block h2 {
+        font-size: 24px;
+    }
+    .button {
+        font-size: 14px;
+        width: 70%; /* Increase the width to maintain readability on smaller screens */
+    }
+}
+
+/* Additional styles for the PDF iframe */
+.pdf-container {
+    width: 80%; /* Reduced width by 20% */
+    height: 60vh; /* Reduced height by 20% */
+    background: transparent; /* Removed background */
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: none; /* Removed box shadow */
+    margin: 20px auto; /* Added margin to move it further down the page and center it */
+}
+
+.pdf-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    
+}
+
+/* Additional styles for the download button */
+.download-button {
+    display: inline-block;
+    padding: 10px 20px; /* Adjusted padding for the button */
+    margin-top: 10px; /* Margin above the button */
+    background-color: #000000; /* Black */
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 10px; /* Rounded corners */
+    transition: background-color 0.3s, transform 0.3s; /* Added transform transition */
+}
+
+.download-button:hover {
+    background-color: #45a049;
+    transform: scale(1.1); /* Slightly enlarge the button on hover */
+}
