@@ -6,9 +6,9 @@ body {
 }
 
 /* Home page specific styles */
-body.home-page .content-section{
+body.home-page {
     background: linear-gradient(to bottom right, #14d890, #7f93a3); /* Example gradient for home page */
-    padding-left: 10%;
+
 }
 
 /* About page specific styles */
@@ -33,9 +33,10 @@ body.islam-page {
     background: linear-gradient(to bottom right,  #000000, #555);
 }
 
-body.collaboration-page {
-    background: linear-gradient(to bottom right,  #000000, #555);
+body.become-a-leader-page {
+    background: linear-gradient(to bottom right,  #ffff39, #a12d2d);
 }
+
 
 header {
     position: fixed;
@@ -127,7 +128,7 @@ header ul li .dropdown-content a:hover {
     background: transparent; /* Transparent background for scrolling effect */
     text-align: center;
     position: relative;
-    min-height: 100vh;
+    min-height: 50vh;
     display: flex;
     align-items: center; /* Center items vertically */
     justify-content: center;
@@ -175,6 +176,8 @@ header ul li .dropdown-content a:hover {
     justify-content: center;
 }
 
+
+
 /* Islam page button style */
 .islam-page .button {
     background-color: #4CAF50; /* Green */
@@ -203,8 +206,8 @@ header ul li .dropdown-content a:hover {
 
 /* Additional styles for the PDF iframe */
 .pdf-container {
-    width: 80%; /* Reduced width by 20% */
-    height: 60vh; /* Reduced height by 20% */
+    width: 100%; /* Reduced width by 20% */
+    height: 100vh; /* Reduced height by 20% */
     background: transparent; /* Removed background */
     border-radius: 10px;
     overflow: hidden;
