@@ -33,6 +33,10 @@ body.islam-page {
     background: linear-gradient(to bottom right,  #000000, #555);
 }
 
+body.collaboration-page {
+    background: linear-gradient(to bottom right,  #000000, #555);
+}
+
 header {
     position: fixed;
     width: 100%;
