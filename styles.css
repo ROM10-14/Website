@@ -1,284 +1,65 @@
-body {
-    margin: 0;
-    font-family: 'Arial Rounded MT Bold', Arial, sans-serif;
-    color: #fff;
-    overflow-x: hidden;
-}
-
-/* Home page specific styles */
-body.home-page {
-    background: linear-gradient(to bottom right, #14d890, #7f93a3); /* Example gradient for home page */
-}
-
-/* About page specific styles */
-body.about-page {
-    background: linear-gradient(to bottom right, #d9a7c7, #8a8442); /* Slightly darker gradient */
-}
-
-/* Contact page specific styles */
-body.contact-page {
-    background: linear-gradient(to bottom right, #7f93a3, #14d890); /* Example gradient for contact page */
-}
-
-/* Collaboration page specific styles */
-body.collaboration-page {
-    background: linear-gradient(to bottom right, #608baf, #14d890); /* Example gradient for collaboration page */
-}
-
-/* Prayer meeting materials page specific styles */
-body.prayer-meeting-materials-page {
-    background: linear-gradient(to bottom right, #000000, #555);
-}
-
-/* Islam page specific styles */
-body.islam-page {
-    background: linear-gradient(to bottom right,  #000000, #555);
-}
-
-/* Become a leader page specific styles */
-body.become-a-leader-page {
-    background: linear-gradient(to bottom right,  #ffff39, #a12d2d);
-}
-
-header {
-    position: fixed;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.8); /* Slightly transparent */
-    padding: 10px 20px;
-    display: flex;
-    align-items: center;
-    z-index: 1000;
-}
-
-header .logo {
-    font-size: 24px;
-    margin-right: 20px;
-}
-
-header .logo a {
-    color: #fff;
-    text-decoration: none;
-}
-
-header nav {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start; /* Align nav items to the left */
-    flex-grow: 1; /* Allow nav to grow and take up available space */
-}
-
-header ul {
-    list-style: none;
-    display: flex;
-    margin: 0;
-    padding: 0;
-    align-items: center;
-}
-
-header ul li {
-    margin-right: 10px; /* Reduced margin to decrease space between links */
-    position: relative;
-}
-
-header ul li:last-child {
-    margin-right: 0;
-}
-
-header ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 18px;
-}
-
-header ul li a:hover {
-    background-color: #555; /* Background color for hovered link */
-    border-radius: 10px; /* Rounded corners for hovered link */
-}
-
-header ul li.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-header ul li .dropdown-content {
-    display: none;
-    position: absolute;
-    left: 0;
-    top: 100%;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-    border-radius: 10px; /* Rounded corners for the dropdown container */
-    overflow: hidden; /* Ensures the dropdown items stay within the container */
-}
-
-header ul li .dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    border-radius: 10px; /* Rounded corners for the dropdown items */
-    margin: 5px; /* Adds space between the rounded items */
-}
-
-header ul li .dropdown-content a:hover {
-    background-color: #f1f1f1;
-}
-
-.content-section {
-    padding: 100px 20px; /* Reduced padding to bring content closer to the top */
-    background: transparent; /* Transparent background for scrolling effect */
-    text-align: center;
-    position: relative;
-    min-height: 50vh;
-    display: flex;
-    align-items: center; /* Center items vertically */
-    justify-content: center;
-}
-
-.content-block {
-    padding: 20px;
-    background: transparent; /* Removed background */
-    border-radius: 8px;
-    width: 80%; /* Adjust width as needed */
-    margin: 20px 0; /* Reduced margin to bring content closer to the top */
-    box-shadow: none; /* Removed box shadow */
-}
-
-.content-block h1, .content-block h2 {
-    font-size: 36px;
-    margin: 10px 0;
-}
-
-.content-block p {
-    font-size: 18px;
-}
-
-.button {
-    display: inline-block;
-    padding: 10px 20px; /* Adjusted padding for the button */
-    margin: 20px 0; /* Adjusted margin for better spacing */
-    background-color: #4CAF50; /* Green */
-    color: white;
-    text-decoration: none;
-    font-size: 16px;
-    border-radius: 10px; /* Rounded corners */
-    width: 50%; /* Set the width to 50% of its container */
-    transition: background-color 0.3s, transform 0.3s; /* Added transform transition */
-}
-
-.button:hover {
-    background-color: #45a049;
-    transform: scale(1.1); /* Slightly enlarge the button on hover */
-}
-
-/* Center the button horizontally */
-.button-container {
-    display: flex;
-    justify-content: center;
-}
-
-/* Islam page button style */
-.islam-page .button {
-    background-color: #4CAF50; /* Green */
-    color: white;
-    text-decoration: none;
-    font-size: 16px;
-    border-radius: 10px; /* Rounded corners */
-    width: 50%; /* Set the width to 50% of its container */
-    transition: background-color 0.3s, transform 0.3s; /* Added transform transition */
-}
-
-.islam-page .button:hover {
-    background-color: #555; /* Background color to match header hover effect */
-    transform: scale(1.1); /* Slightly enlarge the button on hover */
-}
-
-/* Responsive styles for mobile devices */
-@media (max-width: 768px) {
-    header .logo {
-        font-size: 20px;
-        margin-right: 10px;
-    }
-
-    header ul {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    header ul li {
-        margin-right: 0;
-        margin-bottom: 10px;
-    }
-
-    header ul li a {
-        font-size: 16px;
-    }
-
-    .content-section {
-        padding: 60px 20px;
-    }
-
-    .content-block {
-        width: 90%;
-        padding: 15px;
-    }
-
-    .content-block h1, .content-block h2 {
-        font-size: 24px;
-    }
-
-    .content-block p {
-        font-size: 16px;
-    }
-
-    .button {
-        width: 70%;
-        font-size: 14px;
-    }
-
-    .pdf-container {
-        width: 100%;
-        height: 50vh;
-    }
-
-    .download-button {
-        width: 70%;
-        font-size: 14px;
-    }
-}
-
-/* Additional styles for the PDF iframe */
-.pdf-container {
-    width: 100%; /* Full width for mobile */
-    height: 100vh; /* Full height for mobile */
-    background: transparent; /* Removed background */
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: none; /* Removed box shadow */
-    margin: 20px auto; /* Added margin to move it further down the page and center it */
-}
-
-.pdf-container iframe {
-    width: 100%;
-    height: 100%;
-    border: none;
-}
-
-/* Additional styles for the download button */
-.download-button {
-    display: inline-block;
-    padding: 10px 20px; /* Adjusted padding for the button */
-    margin-top: 10px; /* Margin above the button */
-    background-color: #000000; /* Black */
-    color: white;
-    text-decoration: none;
-    font-size: 16px;
-    border-radius: 10px; /* Rounded corners */
-    transition: background-color 0.3s, transform 0.3s; /* Added transform transition */
-}
-
-.download-button:hover {
-    background-color: #45a049;
-    transform: scale(1.1); /* Slightly enlarge the button on hover */
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10/14</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="home-page">
+    <header>
+        <nav>
+            <div class="logo"><a href="index.html">10/14</a></div>
+            <div class="hamburger-menu" id="hamburger-menu">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+            <ul id="nav-links">
+                <li class="dropdown">
+                    <a href="#">Resources</a>
+                    <div class="dropdown-content">
+                        <a href="islam.html">Understanding Islam</a>
+                        <a href="prayer-meeting-materials.html">Prayer Meeting Materials</a>
+                        <a href="become-a-leader.html">Becoming a Leader</a>
+                    </div>
+                </li>
+                <li><a href="collaboration.html">Collaboration</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="content-section">
+            <div class="content-block">
+                <h1>Pray. Collaborate. Learn.</h1>
+                <p>Pray for the unreached nations, colloberate on ministry ideas, and learn how to evangelise others.</p>
+            </div>
+            <div class="button-container">
+                <a href="about.html" class="download-button">About</a>
+            </div>
+        </section>
+        <section class="content-section">
+            <div class="content-block">
+                <h1>Welcome to the Romans 10/14 Prayer Initiative</h1>
+                <p>This is where you can sign up to become a prayer meeting leader and gain access to tons of resources for reaching the unreached with the gospel!</p>
+            </div>
+            <div class="button-container">
+                <a href="prayer-meeting-materials.html" class="download-button">Prayer Materials</a>
+            </div>
+        </section>
+       
+        <section class="content-section">
+            <div class="content-block">
+                <h1>Collaborate</h1>
+                <p>When people work together things get done faster, and better. Join our Slack discussion on ministry ideas and for networking!</p>
+            </div>
+            <div class="button-container">
+                <a href="collaboration.html" class="download-button">Join Us</a>
+            </div>
+        </section>
+    </main>
+    <script src="scripts.js"></script>
+</body>
+</html>
