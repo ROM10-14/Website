@@ -1,29 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-<head> 
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>10/14</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-WCW96JV38P"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-WCW96JV38P');
-</script>
 <body class="home-page">
     <header>
         <nav>
             <div class="logo"><a href="index.html">10/14</a></div>
-            <ul>
+            <div class="hamburger-menu" id="hamburger-menu">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+            <ul id="nav-links">
                 <li class="dropdown">
                     <a href="#">Resources</a>
                     <div class="dropdown-content">
-                        <a href="islam.html">Islam</a>
+                        <a href="islam.html">Understanding Islam</a>
                         <a href="prayer-meeting-materials.html">Prayer Meeting Materials</a>
                         <a href="become-a-leader.html">Becoming a Leader</a>
                     </div>
@@ -38,20 +34,32 @@
         <section class="content-section">
             <div class="content-block">
                 <h1>Pray. Collaborate. Learn.</h1>
+                <p>Pray for the unreached nations, colloberate on ministry ideas, and learn how to evangelise others.</p>
+            </div>
+            <div class="button-container">
+                <a href="about.html" class="download-button">About</a>
             </div>
         </section>
         <section class="content-section">
             <div class="content-block">
-                <h1>Welcome t0 the Romans 10/14 Prayer Initiative</h1>
+                <h1>Welcome to the Romans 10/14 Prayer Initiative</h1>
                 <p>This is where you can sign up to become a prayer meeting leader and gain access to tons of resources for reaching the unreached with the gospel!</p>
             </div>
+            <div class="button-container">
+                <a href="prayer-meeting-materials.html" class="download-button">Prayer Materials</a>
+            </div>
         </section>
+       
         <section class="content-section">
             <div class="content-block">
                 <h1>Collaborate</h1>
                 <p>When people work together things get done faster, and better. Join our Slack discussion on ministry ideas and for networking!</p>
             </div>
+            <div class="button-container">
+                <a href="collaboration.html" class="download-button">Join Us</a>
+            </div>
         </section>
     </main>
+    <script src="scripts.js"></script>
 </body>
 </html>
