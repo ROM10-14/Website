@@ -8,7 +8,6 @@ body {
 /* Home page specific styles */
 body.home-page {
     background: linear-gradient(to bottom right, #14d890, #7f93a3); /* Example gradient for home page */
-
 }
 
 /* About page specific styles */
@@ -21,22 +20,25 @@ body.contact-page {
     background: linear-gradient(to bottom right, #7f93a3, #14d890); /* Example gradient for contact page */
 }
 
-/* Contact page specific styles */
+/* Collaboration page specific styles */
 body.collaboration-page {
-    background: linear-gradient(to bottom right, #608baf, #14d890); /* Example gradient for contact page */
+    background: linear-gradient(to bottom right, #608baf, #14d890); /* Example gradient for collaboration page */
 }
 
+/* Prayer meeting materials page specific styles */
 body.prayer-meeting-materials-page {
-background: linear-gradient(to bottom right, #000000, #555);
+    background: linear-gradient(to bottom right, #000000, #555);
 }
+
+/* Islam page specific styles */
 body.islam-page {
     background: linear-gradient(to bottom right,  #000000, #555);
 }
 
+/* Become a leader page specific styles */
 body.become-a-leader-page {
     background: linear-gradient(to bottom right,  #ffff39, #a12d2d);
 }
-
 
 header {
     position: fixed;
@@ -124,7 +126,7 @@ header ul li .dropdown-content a:hover {
 }
 
 .content-section {
-    padding: 20px 20px; /* Reduced padding to bring content closer to the top */
+    padding: 100px 20px; /* Reduced padding to bring content closer to the top */
     background: transparent; /* Transparent background for scrolling effect */
     text-align: center;
     position: relative;
@@ -176,8 +178,6 @@ header ul li .dropdown-content a:hover {
     justify-content: center;
 }
 
-
-
 /* Islam page button style */
 .islam-page .button {
     background-color: #4CAF50; /* Green */
@@ -194,20 +194,64 @@ header ul li .dropdown-content a:hover {
     transform: scale(1.1); /* Slightly enlarge the button on hover */
 }
 
+/* Responsive styles for mobile devices */
 @media (max-width: 768px) {
+    header .logo {
+        font-size: 20px;
+        margin-right: 10px;
+    }
+
+    header ul {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    header ul li {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    header ul li a {
+        font-size: 16px;
+    }
+
+    .content-section {
+        padding: 60px 20px;
+    }
+
+    .content-block {
+        width: 90%;
+        padding: 15px;
+    }
+
     .content-block h1, .content-block h2 {
         font-size: 24px;
     }
+
+    .content-block p {
+        font-size: 16px;
+    }
+
     .button {
+        width: 70%;
         font-size: 14px;
-        width: 70%; /* Increase the width to maintain readability on smaller screens */
+    }
+
+    .pdf-container {
+        width: 100%;
+        height: 50vh;
+    }
+
+    .download-button {
+        width: 70%;
+        font-size: 14px;
     }
 }
 
 /* Additional styles for the PDF iframe */
 .pdf-container {
-    width: 100%; /* Reduced width by 20% */
-    height: 100vh; /* Reduced height by 20% */
+    width: 100%; /* Full width for mobile */
+    height: 100vh; /* Full height for mobile */
     background: transparent; /* Removed background */
     border-radius: 10px;
     overflow: hidden;
@@ -219,7 +263,6 @@ header ul li .dropdown-content a:hover {
     width: 100%;
     height: 100%;
     border: none;
-    
 }
 
 /* Additional styles for the download button */
