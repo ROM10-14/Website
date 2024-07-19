@@ -38,6 +38,11 @@ body.become-a-leader-page {
     background: linear-gradient(to bottom right,  #ffff39, #a12d2d);
 }
 
+body.coming-soon-page {
+    background: linear-gradient(to bottom right,  #ffff39, #a12d2d);
+}
+
+
 
 header {
     position: fixed;
