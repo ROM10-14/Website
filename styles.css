@@ -8,6 +8,7 @@ body {
 /* Home page specific styles */
 body.home-page {
     background: linear-gradient(to bottom right, #14d890, #7f93a3); /* Example gradient for home page */
+
 }
 
 /* About page specific styles */
@@ -26,7 +27,7 @@ body.collaboration-page {
 }
 
 body.prayer-meeting-materials-page {
-    background: linear-gradient(to bottom right, #000000, #555);
+background: linear-gradient(to bottom right, #000000, #555);
 }
 body.islam-page {
     background: linear-gradient(to bottom right,  #000000, #555);
@@ -60,8 +61,8 @@ header .logo a {
 header nav {
     display: flex;
     align-items: center;
-    justify-content: center; /* Center nav items */
-    flex-grow: 1;
+    justify-content: flex-start; /* Align nav items to the left */
+    flex-grow: 1; /* Allow nav to grow and take up available space */
 }
 
 header ul {
@@ -70,11 +71,10 @@ header ul {
     margin: 0;
     padding: 0;
     align-items: center;
-    justify-content: center; /* Center ul items */
 }
 
 header ul li {
-    margin-right: 10px;
+    margin-right: 10px; /* Reduced margin to decrease space between links */
     position: relative;
 }
 
@@ -124,7 +124,7 @@ header ul li .dropdown-content a:hover {
 }
 
 .content-section {
-    padding: 100px 20px; /* Reduced padding to bring content closer to the top */
+    padding: 20px 20px; /* Reduced padding to bring content closer to the top */
     background: transparent; /* Transparent background for scrolling effect */
     text-align: center;
     position: relative;
@@ -194,72 +194,47 @@ header ul li .dropdown-content a:hover {
     transform: scale(1.1); /* Slightly enlarge the button on hover */
 }
 
-/* Hamburger menu styles */
-.hamburger-menu {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-}
-
-.hamburger-menu .line {
-    width: 25px;
-    height: 3px;
-    background-color: #fff;
-    margin: 4px 0;
-}
-
 @media (max-width: 768px) {
-    header nav {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .hamburger-menu {
-        display: flex;
-    }
-
-    header ul {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-    }
-
-    header ul li {
-        width: 100%;
-        text-align: left;
-    }
-
-    header ul li a {
-        padding: 10px 20px;
-        display: block;
-    }
-
-    header ul.show {
-        display: flex;
-    }
-
     .content-block h1, .content-block h2 {
         font-size: 24px;
     }
-
     .button {
         font-size: 14px;
         width: 70%; /* Increase the width to maintain readability on smaller screens */
-    }
-
-    .pdf-container {
-        width: 100%;
-        height: 50vh;
-    }
-
-    .download-button {
-        width: 70%;
-        font-size: 14px;
     }
 }
 
 /* Additional styles for the PDF iframe */
 .pdf-container {
-    width: 100%; /* Reduced width by 20% */
-    height: 100vh; /* Reduced height by 20% */
-    background: transparent
+    width: 80%; /* Increase width */
+    height: 80vh; /* Increase height */
+    background: transparent; /* Removed background */
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: none; /* Removed box shadow */
+    margin: 20px auto; /* Added margin to move it further down the page and center it */
+}
+
+.pdf-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Additional styles for the download button */
+.download-button {
+    display: inline-block;
+    padding: 10px 20px; /* Adjusted padding for the button */
+    margin-top: 10px; /* Margin above the button */
+    background-color: #000000; /* Black */
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 10px; /* Rounded corners */
+    transition: background-color 0.3s, transform 0.3s; /* Added transform transition */
+}
+
+.download-button:hover {
+    background-color: #45a049;
+    transform: scale(1.1); /* Slightly enlarge the button on hover */
+}
