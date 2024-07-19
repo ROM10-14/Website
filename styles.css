@@ -3,6 +3,7 @@ body {
     font-family: 'Arial Rounded MT Bold', Arial, sans-serif;
     color: #fff;
     overflow-x: hidden;
+    width: 100%;
 }
 
 /* Home page specific styles */
