@@ -12,10 +12,6 @@ body.home-page {
 
 }
 
-/* Contact page specific styles */
-body.collaboration-page {
-    background: linear-gradient(to bottom right, #608baf, #14d890); /* Example gradient for contact page */
-}
 
 body.prayer-meeting-materials-page {
 background: linear-gradient(to bottom right, #000000, #555);
