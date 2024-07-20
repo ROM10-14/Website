@@ -12,16 +12,6 @@ body.home-page {
 
 }
 
-/* About page specific styles */
-body.about-page {
-    background: linear-gradient(to bottom right, #d9a7c7, #8a8442); /* Slightly darker gradient */
-}
-
-/* Contact page specific styles */
-body.contact-page {
-    background: linear-gradient(to bottom right, #7f93a3, #14d890); /* Example gradient for contact page */
-}
-
 /* Contact page specific styles */
 body.collaboration-page {
     background: linear-gradient(to bottom right, #608baf, #14d890); /* Example gradient for contact page */
