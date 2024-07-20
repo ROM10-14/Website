@@ -28,7 +28,9 @@ body.coming-soon-page {
     background: linear-gradient(to bottom right, #14d890, #7f93a3); /* Example gradient for home page */
 }
 
-
+body.collaboration-page{
+    background: linear-gradient(to bottom right, #14d890, #7f93a3); /* Example gradient for home page */
+}
 
 header {
     position: fixed;
