@@ -126,7 +126,7 @@ header ul li a {
 }
 
 header ul li a:hover {
-    color: #ababab;
+    color: #ffffff;
     border-radius: 10px;
 }
 
@@ -139,7 +139,7 @@ header ul li .dropdown-content {
     position: absolute;
     left: 0;
     top: 100%;
-    background-color: #f9f9f9;
+    background-color: #808080;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
@@ -157,7 +157,7 @@ header ul li .dropdown-content a {
 }
 
 header ul li .dropdown-content a:hover {
-    background-color: #f1f1f1;
+    background-color: #a0a0a0;
 }
 
 .content-section {
