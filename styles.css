@@ -246,7 +246,7 @@ header ul li .dropdown-content a:hover {
 }
 
 .fade-in {
-    animation: fadeIn 3s ease-in;
+    animation: fadeIn 2s ease-in;
 }
 
 /* Slide-in left animation */
