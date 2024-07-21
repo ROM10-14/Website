@@ -262,7 +262,7 @@ header ul li .dropdown-content a:hover {
 }
 
 .slide-in-left {
-    animation: slideInLeft 3s ease-out;
+    animation: slideInLeft 2s ease-out;
 }
 
 /* Slide-in right animation */
@@ -278,5 +278,5 @@ header ul li .dropdown-content a:hover {
 }
 
 .slide-in-right {
-    animation: slideInRight 3s ease-out;
+    animation: slideInRight 2s ease-out;
 }
