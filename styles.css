@@ -71,7 +71,7 @@ body.become-a-leader-page,
 body.outerspace-page,
 body.collaboration-page
 body.coming-soon-page {
-    background: linear-gradient(to bottom right, #f97b7b, #555);
+    background: color(rgb(0, 0, 0));
 }
 
 header {
