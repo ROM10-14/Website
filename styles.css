@@ -71,7 +71,7 @@ body.become-a-leader-page,
 body.outerspace-page,
 body.collaboration-page
 body.coming-soon-page {
-    background: color(rgb(0, 0, 0));
+    background: color: black;
 }
 
 header {
