@@ -62,29 +62,20 @@ body {
 
 /* Home page specific styles */
 body.home-page {
-    background: linear-gradient(to bottom right, #14d890, #7f93a3); /* Example gradient for home page */
+    background: linear-gradient(to bottom right, #14d890, #7f93a3);
 }
 
-body.prayer-meeting-materials-page {
-    background: linear-gradient(to bottom right, #000000, #555);
-}
-
-body.islam-page {
-    background: linear-gradient(to bottom right, #000000, #555);
-}
-
-body.become-a-leader-page {
-    background: linear-gradient(to bottom right, #ffff39, #a12d2d);
-}
-
+body.prayer-meeting-materials-page,
+body.islam-page,
+body.become-a-leader-page,
 body.coming-soon-page {
-    background: linear-gradient(to bottom right, #14d890, #7f93a3); /* Example gradient for home page */
+    background: linear-gradient(to bottom right, #000000, #555);
 }
 
 header {
     position: fixed;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.8); /* Slightly transparent */
+    background-color: rgba(0, 0, 0, 0.8);
     padding: 10px 20px;
     display: flex;
     align-items: center;
@@ -104,8 +95,8 @@ header .logo a {
 header nav {
     display: flex;
     align-items: center;
-    justify-content: flex-start; /* Align nav items to the left */
-    flex-grow: 1; /* Allow nav to grow and take up available space */
+    justify-content: flex-start;
+    flex-grow: 1;
 }
 
 header ul {
@@ -117,7 +108,7 @@ header ul {
 }
 
 header ul li {
-    margin-right: 10px; /* Reduced margin to decrease space between links */
+    margin-right: 10px;
     position: relative;
 }
 
@@ -129,12 +120,14 @@ header ul li a {
     color: #fff;
     text-decoration: none;
     font-size: 18px;
-    transition: color 0.3s; /* Added transition for link color */
+    transition: color 0.3s;
+    padding: 10px; /* Added padding around the links */
+    background-color: black; /* Black padding around buttons */
 }
 
 header ul li a:hover {
-    color: #14d890; /* Change color on hover */
-    border-radius: 10px; /* Rounded corners for hovered link */
+    color: #14d890;
+    border-radius: 10px;
 }
 
 header ul li.dropdown:hover .dropdown-content {
@@ -150,8 +143,8 @@ header ul li .dropdown-content {
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
-    border-radius: 10px; /* Rounded corners for the dropdown container */
-    overflow: hidden; /* Ensures the dropdown items stay within the container */
+    border-radius: 10px;
+    overflow: hidden;
 }
 
 header ul li .dropdown-content a {
@@ -159,8 +152,8 @@ header ul li .dropdown-content a {
     padding: 12px 16px;
     text-decoration: none;
     display: block;
-    border-radius: 10px; /* Rounded corners for the dropdown items */
-    margin: 5px; /* Adds space between the rounded items */
+    border-radius: 10px;
+    margin: 5px;
 }
 
 header ul li .dropdown-content a:hover {
@@ -168,28 +161,28 @@ header ul li .dropdown-content a:hover {
 }
 
 .content-section {
-    padding: 20px 20px; /* Reduced padding to bring content closer to the top */
-    background: transparent; /* Transparent background for scrolling effect */
+    padding: 20px 20px;
+    background: transparent;
     text-align: center;
     position: relative;
     min-height: 50vh;
     display: flex;
-    align-items: center; /* Center items vertically */
+    align-items: center;
     justify-content: center;
 }
 
 .content-block {
     padding: 20px;
-    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    background: rgba(0, 0, 0, 0.5);
     border-radius: 8px;
-    width: 80%; /* Adjust width as needed */
-    margin: 20px 0; /* Reduced margin to bring content closer to the top */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Added box shadow */
-    transition: transform 0.3s; /* Added transition for transform */
+    width: 80%;
+    margin: 20px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
 }
 
 .content-block:hover {
-    transform: scale(1.05); /* Slightly enlarge the block on hover */
+    transform: scale(1.05);
 }
 
 .content-block h1, .content-block h2 {
@@ -203,26 +196,40 @@ header ul li .dropdown-content a:hover {
 
 .button {
     display: inline-block;
-    padding: 10px 20px; /* Adjusted padding for the button */
-    margin: 20px 0; /* Adjusted margin for better spacing */
-    background-color: #4CAF50; /* Green */
+    padding: 10px 20px;
+    margin: 20px 0;
+    background-color: #4CAF50;
     color: white;
     text-decoration: none;
     font-size: 16px;
-    border-radius: 10px; /* Rounded corners */
-    width: 50%; /* Set the width to 50% of its container */
-    transition: background-color 0.3s, transform 0.3s; /* Added transform transition */
+    border-radius: 10px;
+    width: 50%;
+    transition: background-color 0.3s, transform 0.3s;
 }
 
 .button:hover {
     background-color: #45a049;
-    transform: scale(1.1); /* Slightly enlarge the button on hover */
+    transform: scale(1.1);
 }
 
-/* Center the button horizontally */
 .button-container {
     display: flex;
     justify-content: center;
+}
+
+.pdf-container {
+    width: 90%; /* Adjust to desired width */
+    height: 80vh; /* Adjust to desired height */
+    margin: 20px auto;
+    background: #fff;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.pdf-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
 }
 
 @media (max-width: 768px) {
@@ -231,11 +238,10 @@ header ul li .dropdown-content a:hover {
     }
     .button {
         font-size: 14px;
-        width: 70%; /* Increase the width to maintain readability on smaller screens */
+        width: 70%;
     }
 }
 
-/* Home page specific animations */
 .home-page .fade-in {
     animation: fadeIn 2s ease-in;
 }
@@ -248,7 +254,6 @@ header ul li .dropdown-content a:hover {
     animation: slideInRight 1s ease-out;
 }
 
-/* Fade-in animation */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -258,7 +263,6 @@ header ul li .dropdown-content a:hover {
     }
 }
 
-/* Slide-in left animation */
 @keyframes slideInLeft {
     from {
         transform: translateX(-100%);
@@ -270,7 +274,6 @@ header ul li .dropdown-content a:hover {
     }
 }
 
-/* Slide-in right animation */
 @keyframes slideInRight {
     from {
         transform: translateX(100%);
