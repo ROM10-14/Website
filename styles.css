@@ -170,7 +170,7 @@ header ul li .dropdown-content a:hover {
 }
 
 .content-section {
-    padding: 10px 0px;
+    padding: 5px 0px;
     background: transparent;
     text-align: center;
     position: relative;
@@ -181,11 +181,11 @@ header ul li .dropdown-content a:hover {
 }
 
 .content-block {
-    padding: 10px;
+    padding: 5px;
     background: rgba(0, 0, 0, 0.5);
     border-radius: 8px;
     width: 80%;
-    margin: 10px 0;
+    margin: 5px, 0;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s;
 }
@@ -200,7 +200,7 @@ header ul li .dropdown-content a:hover {
 }
 
 .content-block p {
-    font-size: 10px;
+    font-size: 20px;
 }
 
 .button {
