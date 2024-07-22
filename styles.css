@@ -60,7 +60,7 @@ body {
 
 /* Home page specific styles */
 body.home-page {
-    background-image: url('skyline.jpg'); /* Path to your background image */
+    background-image: url('afghan.jpg'); /* Path to your background image */
     background-size: cover; /* Ensures the image covers the whole background */
     background-repeat: no-repeat; /* Prevents the image from repeating */
     background-attachment: fixed; /* Keeps the background image fixed when scrolling */
@@ -190,7 +190,7 @@ header ul li .dropdown-content a:hover {
 }
 
 .content-block {
-    margin-top: 10px;
+    margin-top: 20px;
     padding: 10px;
     background: rgba(0, 0, 0, 0.5);
     border-radius: 8px;
