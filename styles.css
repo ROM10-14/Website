@@ -179,7 +179,7 @@ header ul li .dropdown-content a:hover {
 }
 
 .content-section {
-
+    margin-top: 10px;
     padding: 10px 0px;
     background: transparent;
     text-align: center;
