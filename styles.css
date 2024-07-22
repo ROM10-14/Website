@@ -200,6 +200,19 @@ header ul li .dropdown-content a:hover {
     transition: transform 0.3s;
 }
 
+@media only screen and (max-width: 1200px) {
+    .content-block {
+    margin-top: 70px;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+    width: 80%;
+    margin: 5px, 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+    }
+}
+
 .content-block:hover {
     transform: scale(1.05);
 }
