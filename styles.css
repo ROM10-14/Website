@@ -73,7 +73,7 @@ body.home-page {
 
 @media only screen and (max-width: 600px) {
     body.home-page{
-        background-image: ('afghan.jpg');
+        background-color: grey;
         background-size: cover; /* Ensures the image covers the whole background */
         background-repeat: no-repeat; /* Prevents the image from repeating */
         background-attachment: fixed; /* Keeps the background image fixed when scrolling */
