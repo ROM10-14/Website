@@ -72,6 +72,12 @@ body.home-page {
     width: 100%;
 }
 
+@media only screen and (max-width: 768px) {
+    body.home-page{
+        background-image: ('afghan.jpg');
+    }
+}
+
 body.prayer-meeting-materials-page,
 body.islam-page,
 body.become-a-leader-page,
