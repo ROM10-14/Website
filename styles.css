@@ -71,9 +71,13 @@ body.home-page {
     width: 100%;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 600px) {
     body.home-page{
         background-image: ('afghan.jpg');
+        background-size: cover; /* Ensures the image covers the whole background */
+        background-repeat: no-repeat; /* Prevents the image from repeating */
+        background-attachment: fixed; /* Keeps the background image fixed when scrolling */
+        background-position: center;
     }
 }
 
