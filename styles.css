@@ -60,7 +60,7 @@ body {
 
 /* Home page specific styles */
 body.home-page {
-    background-image: url('himalayas.jpg'); /* Path to your background image */
+    background-image: url('skyline.jpg'); /* Path to your background image */
     background-size: cover; /* Ensures the image covers the whole background */
     background-repeat: no-repeat; /* Prevents the image from repeating */
     background-attachment: fixed; /* Keeps the background image fixed when scrolling */
@@ -73,7 +73,7 @@ body.home-page {
 
 @media only screen and (max-width: 1200px) {
     body.home-page{
-        background-image: url('himalayas.jpg');
+        background-image: url('skyline.jpg');
         background-size: cover; /* Ensures the image covers the whole background */
         background-repeat: no-repeat; /* Prevents the image from repeating */
         background-attachment: fixed; /* Keeps the background image fixed when scrolling */
