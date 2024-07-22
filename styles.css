@@ -10,7 +10,7 @@ body {
     justify-content: space-between;
     background-color: #333;
     color: #fff;
-    padding: 10px;
+    padding: 20px;
 }
 .footer-section {
     flex: 1;
@@ -86,6 +86,7 @@ body.islam-page,
 body.become-a-leader-page,
 body.outerspace-page,
 body.collaboration-page,
+body.donate-page,
 body.coming-soon-page {
     background-color: black;
 }
@@ -200,21 +201,8 @@ header ul li .dropdown-content a:hover {
     transition: transform 0.3s;
 }
 
-@media only screen and (max-width: 1200px) {
-    .content-block {
-    margin-top: 70px;
-    padding: 10px;
-    background: rgba(0, 0, 0, 0.5);
-    border-radius: 8px;
-    width: 80%;
-    margin: 5px, 0;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s;
-    }
-}
-
-.content-block:hover {
-}
+/* .content-block:hover {
+} */
 
 .content-block h1, .content-block h2 {
     font-size: 36px;
@@ -265,20 +253,8 @@ header ul li .dropdown-content a:hover {
     height: 100%;
     border: none;
 }
-@media only screen and (max-width: 1200px) {
-    .pdf-container {
-        width: 100%; /* Adjust width for mobile */
-        height: 70vh; /* Adjust height for mobile */
-        padding: 5px; /* Adjust padding for mobile */
-    }
 
-    .pdf-container iframe {
-        width: 100%;
-        height: 100%;
-    }
-}
-
-@media (max-width: 1200px) {
+@media (max-width: 768px) {
     .content-block h1, .content-block h2 {
         font-size: 24px;
     }
