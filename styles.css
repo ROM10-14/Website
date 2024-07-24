@@ -26,7 +26,7 @@ body.home-page {
 
 @media only screen and (max-width: 1200px) {
     body.home-page{
-        background-image: url('wall.jpg');
+        background-image: url('Images/desert.jpg');
         background-size: cover; /* Ensures the image covers the whole background */
         background-repeat: no-repeat; /* Prevents the image from repeating */
         background-attachment: fixed; /* Keeps the background image fixed when scrolling */
