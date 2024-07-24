@@ -26,11 +26,12 @@ body.home-page {
 
 @media only screen and (max-width: 1200px) {
     body.home-page{
-        background-image: url('Images/desert.jpg');
+        background-image: url('Images/wall.jpg');
         background-size: cover; /* Ensures the image covers the whole background */
         background-repeat: no-repeat; /* Prevents the image from repeating */
         background-attachment: fixed; /* Keeps the background image fixed when scrolling */
         background-position: center;
+        background-image: fixed;
     }
 }
 
@@ -156,7 +157,7 @@ header ul li .dropdown-content a:hover {
     background: transparent;
     text-align: center;
     position: relative;
-    min-height: 35vh;
+    min-height: 30vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -179,7 +180,8 @@ header ul li .dropdown-content a:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: larger
+
+
 }
 
 
@@ -192,14 +194,14 @@ header ul li .dropdown-content a:hover {
     margin: 5px, 0;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s;
-    font-size: 40px;
+    font-size: 35px;
 }
 
 /* .content-block:hover {
 } */
 
 .content-block h1, .content-block h2 {
-    font-size: 36px;
+    font-size: 35px;
     margin: 10px 0;
 }
 
