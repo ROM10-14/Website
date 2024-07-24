@@ -156,7 +156,7 @@ header ul li .dropdown-content a:hover {
     background: transparent;
     text-align: center;
     position: relative;
-    min-height: 30vh;
+    min-height: 35vh;
     display: flex;
     align-items: center;
     justify-content: center;
