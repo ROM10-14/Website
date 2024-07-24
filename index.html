@@ -32,43 +32,62 @@
                         <a href="prayer-meeting-materials.html">Prayer Meeting Materials</a>
                         <a href="become-a-leader.html">Becoming a Leader</a>
                         <a href="outerspace.html">Astronomy</a>
+                        <a href="articles.html">Articles</a>
                         <a href="collaboration.html">Collaborate</a>
+                        
                     </div>
                 </li>
-                <li><a href="donate.html">Donate</a></li> <!-- Another new nav link -->
+                <li><a href="donate.html">Donate</a></li>
+                <li><a href="prayoftheday.html">Pray Now</a></li>
+                <li><a href="stratus.html">Stratus</a></li>
             </ul>
         </nav>
     </header>
-</body>
+
     <main>
+        <div class = "welcome-container">
+            <h1 class = "welcome-message">
+                Welcome to the Romans 10/14 prayer initiative!
+            </h1>
+
+        </div>
         <section class="content-section fade-in">
-            <div class="content-block">
-                <h1 class="slide-in-left">The Romans 10/14 initiative seeks to see all peoples reached with the love of Christ for the glory of God.</h1>
-                <p>Pray for the unreached nations, collaborate on ministry ideas, and learn how to evangelize.</p>
+            <div class="content-block2">
+                <h1 class="slide-in-left">The Romans 10/14 prayer initiative is dedicated to see all peoples reached with the love of Christ for the glory of God through prayer.</h1>
+                <p>Pray for unreached nations every week, collaborate on ministry ideas, and learn how to evangelize.</p>
+                <h1>Pray</h1>
+                <p class="slide-in-left">Start a prayer meeting for the unreached with our prayer guide!</p>
+                <p>⬇</p>
+                
+                <h1>Collaborate</h1>
+                <p class="slide-in-left">Share ministry ideas and prayer requests on slack!</p>
+                <p>⬇</p>
+                <h1>Learn</h1>
+                <p class="slide-in-left">Learn more about missions, unreached nations and how to evangelize!</p>
+                <p>⬇</p>
+                <h1>Explore Our Resources!</h1>
+                <div class="button-container2">
+                    <a href="prayer-meeting-materials.html" class="button2">Prayer Materials</a>
+                </div>
+                <div class="button-container2">
+                    <a href="islam.html" class="button2">Learn About Islam</a>
+                </div>
+                <div class="button-container2">
+                    <a href="articles.html" class="button2">Articles</a>
+                </div>
+                <div class="button-container2">
+                    <a href="stratus.html" class="button2">Stratus</a>
+                </div>
             </div>
         </section>
-        <section class="content-section fade-in">
-            <div class="content-block">
-                <h1 class="slide-in-right">Welcome to the Romans 10/14 Prayer Initiative</h1>
-                <p class="slide-in-left">This is where you can sign up to become a prayer meeting leader and gain access to tons of resources for reaching the unreached with the gospel!</p>
-            </div>
-        </section>
-        <section class="content-section fade-in">
-            <div class="content-block">
-                <h1 class="slide-in-right">Explore Our Resources!</h1>
-             <div class="button-container">
-                <a href="prayer-meeting-materials.html" class="button">Prayer Materials</a>
-            </div>
-                <div class="button-container">
-                <a href="islam.html" class="button">Learn About Islam</a>
-            </div>
-        </section>
+        
     </main>
+
     <footer>
         <div class="footer-container">
             <div class="footer-section">
                 <h3>Contact Information</h3>
-                <p>Email: romtenfourteen@icloud.com</p>
+                <p>romtenfourteen@icloud.com</p>
             </div>
             <div class="footer-section">
                 <h3>Links</h3>
@@ -77,13 +96,24 @@
                     <li><a href="islam.html">Islam</a></li>
                     <li><a href="prayer-meeting-materials.html">Prayer Meeting Materials</a></li>
                     <li><a href="outerspace.html">Astronomy</a></li>
+                    <li><a href="articles.html">Articles</a></li>
+                    <li><a href="prayoftheday.html">Pray Now</a></li>
+                    <li><a href="stratus.html">Stratus</a></li>
                 </ul>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>2024 10/14. All Rights Reserved.</p>
+            <p>2024 10/14. The Gospel is only good news if it gets there on time - Carl Henry</p>
         </div>
     </footer>
-    <script src="scripts.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const welcomeMessage = document.querySelector(".welcome-message");
+            if (welcomeMessage) {
+                welcomeMessage.classList.add("fade-in");
+            }
+        });
+    </script>
 </body>
 </html>
