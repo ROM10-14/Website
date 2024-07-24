@@ -58,7 +58,30 @@ body.home-page {
     
 }
 
+/* Responsive styles */
+@media (max-width: 1200px) {
+    .hamburger-menu {
+        display: flex; /* Show hamburger menu on mobile */
+    }
 
+    .nav-links {
+        display: none; /* Hide nav links by default on mobile */
+        flex-direction: column;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.9); /* Add a background for the dropdown menu */
+        position: absolute;
+        top: 60px; /* Adjust based on header height */
+        left: 0;
+    }
+
+    .nav-links.active {
+        display: flex; /* Show nav links when active */
+    }
+
+    header ul li {
+        margin: 10px 0; /* Add spacing between menu items */
+    }
+}
 body.collaboration-page {
 background: linear-gradient(50deg, #8f2b13, #706a65);
 }
