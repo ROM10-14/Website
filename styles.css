@@ -1,79 +1,32 @@
 body {
     margin: 0;
-    font-family: 'Arial Rounded MT Bold', Arial, sans-serif;
-    color: #fff;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     width: 100%;
+    color: white;
 }
 
-.footer-container {
-    display: flex;
-    justify-content: space-between;
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
-}
-.footer-section {
-    flex: 1;
-    padding: 10px;
-}
-.footer-section h3 {
-    border-bottom: 2px solid #fff;
-    padding-bottom: 10px;
-    margin-bottom: 10px;
+/* Fade-in animation */
+.fade-in {
+    opacity: 1; /* End state of the animation */
 }
 
-.footer-section p, 
-.footer-section a {
-    color: #fff;
-    text-decoration: none;
-}
-
-.footer-section a:hover {
-    text-decoration: underline;
-}
-
-.social-media {
-    list-style: none;
-    padding: 0;
-}
-
-.social-media li {
-    margin: 5px 0;
-}
-
-.footer-links {
-    list-style: none;
-    padding: 0;
-}
-
-.footer-links li {
-    margin: 5px 0;
-}
-
-.footer-bottom {
-    text-align: center;
-    background-color: #222;
-    color: #fff;
-    padding: 10px 0;
-    margin-top: 20px;
-}
 
 /* Home page specific styles */
 body.home-page {
-    background-image: url('Images/desert.jpg'); /* Path to your background image */
+    background-image: url("Images/wall.jpg");
     background-size: cover; /* Ensures the image covers the whole background */
     background-repeat: no-repeat; /* Prevents the image from repeating */
     background-attachment: fixed; /* Keeps the background image fixed when scrolling */
-    background-position: center; /* Centers the background image */
+    background-position: center;
     color: white; /* Ensures text is readable */
     margin: 0;
-    font-family: 'Arial Rounded MT Bold', Arial, sans-serif;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     width: 100%;
 }
 
 @media only screen and (max-width: 1200px) {
     body.home-page{
-        background-image: url('Images/desert.jpg');
+        background-image: url('Images/wall.jpg');
         background-size: cover; /* Ensures the image covers the whole background */
         background-repeat: no-repeat; /* Prevents the image from repeating */
         background-attachment: fixed; /* Keeps the background image fixed when scrolling */
@@ -81,16 +34,31 @@ body.home-page {
     }
 }
 
+
+body.collaboration-page {
+background: linear-gradient(50deg, #8f2b13, #706a65);
+}
+body.articles-page,
 body.prayer-meeting-materials-page,
 body.islam-page,
 body.become-a-leader-page,
-body.outerspace-page,
-body.collaboration-page,
-body.donate-page,
 body.coming-soon-page {
     background-color: black;
 }
-
+body.donate-page {
+    background: linear-gradient(65deg, #ff7e5f, #c69772);
+    
+}
+body.stratus-page {
+    background: linear-gradient(65deg, #bc0000, #b06429);
+    
+}
+body.prayoftheday-page{
+    background: linear-gradient(65deg, #000000, #644228);
+}
+body.outerspace-page{
+    background: linear-gradient(65deg, #000000, #644728);
+}
 header {
     position: fixed;
     width: 100%;
@@ -99,6 +67,9 @@ header {
     display: flex;
     align-items: center;
     z-index: 1000;
+    margin: 0;
+    top: 0;
+    padding: 20px;
 }
 
 header .logo {
@@ -107,6 +78,7 @@ header .logo {
 }
 
 header .logo a {
+    font-weight: bold;
     color: #fff;
     text-decoration: none;
 }
@@ -116,6 +88,7 @@ header nav {
     align-items: center;
     justify-content: flex-start;
     flex-grow: 1;
+    font-weight: bold;
 }
 
 header ul {
@@ -139,18 +112,15 @@ header ul li a {
     color: #fff;
     text-decoration: none;
     font-size: 18px;
-    transition: color 0.3s;
-    padding: 10px; /* Added padding around the links */
-    background-color: black; /* Black padding around buttons */
 }
 
 header ul li a:hover {
-    color: #ffffff;
-    border-radius: 10px;
+    color: #ffffffc1;
 }
 
 header ul li.dropdown:hover .dropdown-content {
     display: block;
+    font-weight: bold;
 }
 
 header ul li .dropdown-content {
@@ -158,7 +128,7 @@ header ul li .dropdown-content {
     position: absolute;
     left: 0;
     top: 100%;
-    background-color: #808080;
+    background-color: #ffffff;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
@@ -167,7 +137,7 @@ header ul li .dropdown-content {
 }
 
 header ul li .dropdown-content a {
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     padding: 12px 16px;
     text-decoration: none;
     display: block;
@@ -176,7 +146,9 @@ header ul li .dropdown-content a {
 }
 
 header ul li .dropdown-content a:hover {
-    background-color: #a0a0a0;
+    background: linear-gradient(65deg, #ff7e5f, #c69772);
+    color: #000000;
+
 }
 
 .content-section {
@@ -193,12 +165,34 @@ header ul li .dropdown-content a:hover {
 .content-block {
     margin-top: 30px;
     padding: 10px;
+    border-radius: 8px;
+    width: 80%;
+    margin: 5px, 0;
+    transition: transform 0.3s;
+}
+.content-section2 {
+    padding: 10px 0px;
+    background: transparent;
+    text-align: center;
+    position: relative;
+    min-height: 30vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: larger
+}
+
+
+.content-block2 {
+    margin-top: 30px;
+    padding: 10px;
     background: rgba(0, 0, 0, 0.5);
     border-radius: 8px;
     width: 80%;
     margin: 5px, 0;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s;
+    font-size: 40px;
 }
 
 /* .content-block:hover {
@@ -213,32 +207,76 @@ header ul li .dropdown-content a:hover {
     font-size: 20px;
 }
 
-.button {
+.button2 {
     display: inline-block;
     padding: 10px 20px;
-    margin: 20px 0;
-    background-color: #4CAF50;
+    margin: 20px 20px;
+    background-color: #000000;
     color: white;
     text-decoration: none;
-    font-size: 16px;
+    font-size: 35px;
     border-radius: 10px;
-    width: 50%;
+    width: 20%;
     text-align: center;
     line-height: normal;
     transition: background-color 0.3s, transform 0.3s;
 }
 
-.button:hover {
-    background-color: #45a049;
+.button2:hover {
+    background: linear-gradient(65deg, #ff7e5f, #c69772);
     transform: scale(1.1);
 }
+
+.button:hover {
+    background: linear-gradient(65deg, #ff7e5f, #c69772);
+    transform: scale(1.1);
+}
+.button-container2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 20px 0;
+    background-color: #141414;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 10px;
+    width: 20%;
+    text-align: center;
+    line-height: normal;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
 
 .button-container {
     display: flex;
     justify-content: center;
     align-items: center;
 }
+.content-embed {
+    justify-content: center;
+    width: 100%;
+    max-width: 400px;
 
+}
+
+@media (max-width: 1200px) {
+    .content-embed {
+        max-width: 100%;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .pdf-container {
+        display: none;
+    }
+
+}
 .pdf-container {
     width: 90%; /* Adjust to desired width */
     height: 80vh; /* Adjust to desired height */
@@ -248,17 +286,17 @@ header ul li .dropdown-content a:hover {
     border-radius: 10px;
 }
 
+.pdf-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
 .link-button {
     font-family: 'Arial Rounded MT Bold', Arial, sans-serif;
     color: #fff;
     justify-content: center;
     font-size: larger;
-}
-
-.pdf-container iframe {
-    width: 100%;
-    height: 100%;
-    border: none;
 }
 
 @media (max-width: 768px) {
@@ -272,7 +310,7 @@ header ul li .dropdown-content a:hover {
 }
 
 .home-page .fade-in {
-    animation: fadeIn 2s ease-in;
+    animation: fadeIn 1.5s ease-in;
 }
 
 .home-page .slide-in-left {
@@ -312,4 +350,101 @@ header ul li .dropdown-content a:hover {
         transform: translateX(0);
         opacity: 1;
     }
+}
+.welcome-container {
+    text-align: center; /* Center the welcome message */
+    margin-top: 150px; /* Adjust as needed */
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.welcome-message {
+    font-size: 170px; /* Large font size for the welcome message */
+    opacity: .1; /* Start invisible */
+    transition: opacity .25s; /* Smooth transition for fade-in */
+    box-shadow: black;
+}
+.welcome-message.fade-in {
+    opacity: 1;
+}
+
+.external-embed {
+    width: 100%;
+    max-width: 100%;
+    margin: 20px auto;
+}
+
+.external-embed iframe {
+    width: 80%;
+    height: 1000px; /* Adjust height as needed */
+    border: none;
+}
+
+
+/* styles.css */
+
+/* Ensure the wrapper takes full height */
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+.wrapper {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1; /* This ensures the main content takes up available space */
+}
+
+footer {
+    background-color: rgba(34, 34, 34, 0.8); /* Adjusted transparency */
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Other footer styles */
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    color: #fff;
+    background-color: transparent;
+}
+
+.footer-section {
+    flex: 1;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5); /* Adjusted transparency */
+}
+
+.footer-section h3 {
+    border-bottom: 2px solid #fff;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.footer-section p, 
+.footer-section a {
+    color: #fff;
+    text-decoration: none;
+    text-align: left;
+}
+
+.footer-section a:hover {
+    text-decoration: underline;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+}
+
+.footer-links li {
+    margin: 5px 0;
 }
