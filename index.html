@@ -79,6 +79,7 @@
   /* ensure quick category chips are white too */
   .chip { color: #fff !important; }
 </style>
+
 </head>
   <script>
   (function () {
@@ -221,7 +222,7 @@
 
   <!-- Add/Edit Modal -->
   <dialog id="modal" style="max-width:720px;border:1px solid var(--border);border-radius:16px;background:#0c1016;color:var(--text)">
-    <form id="form" method="dialog" style="padding:16px 16px 6px 16px">
+    < id="" method="dialog" style="padding:16px 16px 6px 16px">
       <h3 id="modalTitle">New Prayer Request</h3>
       <div class="kv">
         <div>
@@ -264,6 +265,7 @@
         <button class="btn ghost" value="cancel">Cancel</button>
         <button class="btn primary" id="saveBtn" value="default">Save</button>
       </div>
+      <form id="form" novalidate style="padding:16px 16px 6px 16px">
     </form>
   </dialog>
 
@@ -433,6 +435,9 @@
         if(!it.title){toast('Title required'); return;}
         DATA.unshift(it); save(); $('#modal').close(); render(); toast('Added.');
       };
+      document.getElementById('cancelBtn').onclick = () => {
+  document.getElementById('modal').close();
+};
     }
 
     // --- Filters & UI ---
