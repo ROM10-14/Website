@@ -73,6 +73,12 @@
     input:checked + .slider:before{transform:translateX(22px)}
     .sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
   </style>
+  <style>
+  /* force white for labels in Filters/Focus */
+  label { color: var(--text) !important; }
+  /* ensure quick category chips are white too */
+  .chip { color: #fff !important; }
+</style>
 </head>
   <script>
   (function () {
