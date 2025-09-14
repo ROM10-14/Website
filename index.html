@@ -74,6 +74,33 @@
     .sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
   </style>
 </head>
+  <script>
+  (function () {
+    const dlg = document.getElementById('modal');
+    const form = document.getElementById('form');
+
+    // If the submitter was the Cancel button, just close and do nothing.
+    if (form) {
+      form.addEventListener('submit', function (e) {
+        if (e.submitter && e.submitter.value === 'cancel') {
+          e.preventDefault();
+          dlg.close();
+        }
+      });
+    }
+
+    // Also close when clicking the backdrop (outside the dialog box)
+    if (dlg) {
+      dlg.addEventListener('click', (e) => {
+        const r = dlg.getBoundingClientRect();
+        const inBox =
+          e.clientX >= r.left && e.clientX <= r.right &&
+          e.clientY >= r.top  && e.clientY <= r.bottom;
+        if (!inBox) dlg.close();
+      });
+    }
+  })();
+</script>
 <body>
   <header>
     <div class="container">
