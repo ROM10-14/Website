@@ -1,119 +1,454 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0X43400QZ2"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-0X43400QZ2');
-    </script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>10/14</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pray for Afghanistan — Romans 10:14</title>
+  <meta name="description" content="Track and pray through urgent, Afghan‑focused requests. Submit, sort, filter, and mark answers. Built to be simple, fast, and secure by default." />
+  <style>
+    :root{
+      --bg: #0b0c10; --panel:#111318; --muted:#9aa4b2; --text:#eef2f7; --brand:#2fb67d; --brand-2:#3b82f6; --danger:#ef4444; --warn:#f59e0b; --ok:#22c55e; --card:#0f1115; --border:#1f2430;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0;background:var(--bg);color:var(--text);font:16px/1.45 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji"}
+    a{color:var(--brand-2);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{max-width:1100px;margin:0 auto;padding:20px}
+    header{position:sticky;top:0;background:rgba(11,12,16,.9);backdrop-filter:saturate(160%) blur(8px);border-bottom:1px solid var(--border);z-index:20}
+    header .container{display:flex;align-items:center;gap:16px;padding:12px 20px}
+    .logo{display:flex;align-items:center;gap:10px}
+    .logo .flag{font-size:22px}
+    .logo h1{font-size:18px; margin:0}
+    .sub{color:var(--muted);font-size:13px}
+    .pill{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--border);background:var(--panel);padding:8px 12px;border-radius:999px}
+    .row{display:flex;gap:16px;flex-wrap:wrap}
+    .grow{flex:1 1 320px}
+    .btn{cursor:pointer;border:1px solid var(--border);background:#141821;color:var(--text);padding:10px 14px;border-radius:12px;font-weight:600}
+    .btn:hover{background:#1a2030}
+    .btn.primary{background:linear-gradient(135deg,var(--brand),#0ea5e9);border-color:transparent;color:white}
+    .btn.ghost{background:transparent}
+    .btn.warn{background:#2a1f06;border-color:#5b3d07;color:#ffcf7d}
+    .btn.danger{background:#2a0f12;border-color:#5a1b1f;color:#ff9f9f}
+    .toolbar{display:flex;flex-wrap:wrap;gap:10px}
+    main{padding:16px 0}
+    .grid{display:grid;grid-template-columns:1.2fr .8fr;gap:20px}
+    @media(max-width:900px){.grid{grid-template-columns:1fr}}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:16px}
+    .card h3{margin:0 0 10px 0}
+    .muted{color:var(--muted)}
+    .badge{display:inline-block;padding:4px 10px;border-radius:999px;font-size:12px;border:1px solid var(--border);background:#0e131a;margin-right:6px}
+    .badge.urgent{border-color:#5a1b1f;background:#261317;color:#ff9f9f}
+    .badge.high{border-color:#5b3d07;background:#24190a;color:#ffd089}
+    .badge.normal{border-color:#1d3f2a;background:#122016;color:#a5e6bf}
+    .badge.answered{border-color:#15452b;background:#0f2719;color:#a5e6bf}
+    .request{display:grid;grid-template-columns:1fr auto;gap:8px;padding:14px;border:1px solid var(--border);border-radius:14px;background:#0c1016}
+    .request + .request{margin-top:10px}
+    .request h4{margin:0}
+    .actions{display:flex;align-items:center;gap:8px}
+    input,select,textarea{width:100%;background:#0c1118;border:1px solid var(--border);color:var(--text);padding:10px;border-radius:12px}
+    textarea{min-height:120px;resize:vertical}
+    label{font-size:13px;color:var(--muted)}
+    .kv{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:10px}
+    @media(max-width:900px){.kv{grid-template-columns:1fr 1fr}}
+    .list-empty{padding:18px;border:1px dashed var(--border);border-radius:14px;text-align:center;color:var(--muted)}
+    footer{margin-top:30px;color:var(--muted);font-size:13px}
+    .divider{height:1px;background:var(--border);margin:14px 0}
+    .chips{display:flex;flex-wrap:wrap;gap:6px}
+    .chip{padding:6px 10px;border:1px solid var(--border);background:#0e131a;border-radius:12px;font-size:12px;cursor:pointer}
+    .chip.active{outline:2px solid var(--brand);}
+    .table{width:100%;border-collapse:collapse}
+    .table th,.table td{padding:8px;border-bottom:1px solid var(--border);text-align:left;font-size:14px}
+    .help{font-size:12px;color:var(--muted)}
+    .success{color:#a7f3d0}
+    .danger-text{color:#fecaca}
+    .right{margin-left:auto}
+    .hidden{display:none !important}
+    .toast{position:fixed;right:16px;bottom:16px;background:#12161f;border:1px solid var(--border);padding:12px 14px;border-radius:12px}
+    .switch{position:relative;display:inline-block;width:50px;height:28px}
+    .switch input{opacity:0;width:0;height:0}
+    .slider{position:absolute;cursor:pointer;top:0;left:0;right:0;bottom:0;background:#243044;transition:.2s;border-radius:999px}
+    .slider:before{position:absolute;content:"";height:22px;width:22px;left:3px;bottom:3px;background:white;border-radius:50%;transition:.2s}
+    input:checked + .slider{background:#1b3a2b}
+    input:checked + .slider:before{transform:translateX(22px)}
+    .sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
+  </style>
 </head>
-<body class="home-page">
-    <header>
-        <nav>
-            <div class="logo"><a href="index.html">10/14</a></div>
-            <div class="hamburger-menu" id="hamburger-menu">
-                <div class="line"></div>
-                <div class="line"></div>
-                <div class="line"></div>
-            </div>
-            <ul class="nav-links" id="nav-links">
-                <li class="dropdown">
-                    <a href="#">Resources</a>
-                    <div class="dropdown-content">
-                        <a href="islam.html">Understanding Islam</a>
-                        <a href="prayer-meeting-materials.html">Prayer Meeting Materials</a>
-                        <a href="become-a-leader.html">Becoming a Leader</a>
-                        <a href="outerspace.html">Astronomy</a>
-                        <a href="articles.html">Articles</a>
-                        <a href="collaboration.html">Collaborate</a>
-                        
-                    </div>
-                </li>
-                <li><a href="donate.html">Donate</a></li>
-                <li><a href="prayoftheday.html">Pray Now</a></li>
-                <li><a href="stratus.html">Stratus</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main>
-        <div class = "welcome-container">
-            <h1 class = "welcome-message">
-                Welcome to the 10/14 prayer initiative!
-            </h1>
-
+<body>
+  <header>
+    <div class="container">
+      <div class="logo">
+        <span class="flag" aria-hidden>🇦🇫</span>
+        <div>
+          <h1>Pray for Afghanistan — Romans 10:14</h1>
+          <div class="sub">Track urgent requests, pray with focus, and record God’s answers — safely and simply.</div>
         </div>
-        <section class="content-section fade-in">
-            <div class="content-block2">
-                <h1 class="slide-in-left">The Romans 10/14 prayer initiative is dedicated to see all peoples reached with the love of Christ for the glory of God through prayer.</h1>
-                <p>Pray for unreached nations every week, collaborate on ministry ideas, and learn how to evangelize.</p>
-                <h1>Pray</h1>
-                <p class="slide-in-left">Start a prayer meeting for the unreached with our prayer guide!</p>
-                <p>⬇</p>
-                
-                <h1>Collaborate</h1>
-                <p class="slide-in-left">Share ministry ideas and prayer requests on slack!</p>
-                <p>⬇</p>
-                <h1>Learn</h1>
-                <p class="slide-in-left">Learn more about missions, unreached nations and how to evangelize!</p>
-                <p>⬇</p>
-                <h1>Explore Our Resources!</h1>
-                <div class="button-container2">
-                    <a href="prayer-meeting-materials.html" class="button2">Prayer Materials</a>
-                </div>
-                <div class="button-container2">
-                    <a href="islam.html" class="button2">Learn About Islam</a>
-                </div>
-                <div class="button-container2">
-                    <a href="articles.html" class="button2">Articles</a>
-                </div>
-                <div class="button-container2">
-                    <a href="stratus.html" class="button2">Stratus</a>
-                </div>
+      </div>
+      <div class="right toolbar">
+        <button class="btn primary" id="btnAdd">+ New Request</button>
+        <button class="btn" id="btnExport" title="Download a backup JSON of all requests">Export</button>
+        <label class="pill" title="Import a previously exported JSON">
+          <input id="fileImport" type="file" accept="application/json" class="sr" />
+          <span>Import</span>
+        </label>
+        <label class="pill" title="Dark Mode">
+          <span>Dark</span>
+          <label class="switch"><input id="darkToggle" type="checkbox" checked><span class="slider"></span></label>
+        </label>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <div class="row">
+        <div class="grow">
+          <h3>Focus</h3>
+          <p class="muted">This tool centers prayer on Afghanistan — people, churches (often hidden), refugees, governance, disasters, and gospel access. Avoid names or details that could endanger anyone.</p>
+          <div class="chips" id="quickCats"></div>
+        </div>
+        <div class="grow">
+          <h3>Filters</h3>
+          <div class="kv">
+            <div>
+              <label for="q">Search</label>
+              <input id="q" placeholder="Find requests by title, details, region…" />
             </div>
-        </section>
-        
-    </main>
+            <div>
+              <label for="fUrgency">Urgency</label>
+              <select id="fUrgency">
+                <option value="">Any</option>
+                <option>Urgent</option>
+                <option>High</option>
+                <option>Normal</option>
+              </select>
+            </div>
+            <div>
+              <label for="fStatus">Status</label>
+              <select id="fStatus">
+                <option value="open">Open</option>
+                <option value="answered">Answered</option>
+                <option value="all">All</option>
+              </select>
+            </div>
+            <div>
+              <label for="fRegion">Region / Province</label>
+              <input id="fRegion" placeholder="e.g., Kabul, Herat, Badakhshan" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="grid" style="margin-top:16px">
+      <section class="card">
+        <div class="row" style="align-items:center">
+          <h3 style="margin:0">Prayer Requests</h3>
+          <div class="right toolbar">
+            <label class="pill">Sort by
+              <select id="sort">
+                <option value="recent">Most Recent</option>
+                <option value="prayed">Most Prayed</option>
+                <option value="urgency">Urgency</option>
+              </select>
+            </label>
+            <button class="btn ghost" id="btnClearFilters">Clear Filters</button>
+          </div>
+        </div>
+        <div id="list"></div>
+        <div id="empty" class="list-empty hidden">No requests match your filters.</div>
+      </section>
+
+      <aside class="card">
+        <h3>Top This Week</h3>
+        <p class="muted">Highest prayer activity in the last 7 days.</p>
+        <div id="topWeek"></div>
+        <div class="divider"></div>
+        <h3>Answered</h3>
+        <div id="answered"></div>
+      </aside>
+    </div>
+
+    <section class="card" style="margin-top:16px">
+      <h3>Resources for Praying Wisely</h3>
+      <ul>
+        <li>Pray Scripture: bold love (John 13), endurance (Hebrews 12), courage (Acts 4), wisdom for leaders (1 Tim 2), protection for the vulnerable (Ps 10; Ps 91).</li>
+        <li>Pray by regions/provinces (Kabul, Herat, Balkh, Kandahar, Nangarhar, Badakhshan…). Consider refugees in neighboring countries.</li>
+        <li>Security first: never post names, addresses, photos, or details that could identify believers or ministry contacts.</li>
+        <li>Track outcomes: when you see God answer, mark it and write a short note so others can praise Him.</li>
+      </ul>
+      <p class="help">Tip: Export a backup monthly. You can also keep a private offline copy if internet access is risky.</p>
+    </section>
 
     <footer>
-        <div class="footer-container">
-            <div class="footer-section">
-                <h3>Contact Information</h3>
-                <p>romtenfourteen@icloud.com</p>
-            </div>
-            <div class="footer-section">
-                <h3>Links</h3>
-                <ul class="footer-links">
-                    <li><a href="become-a-leader.html">Become A Leader</a></li>
-                    <li><a href="islam.html">Islam</a></li>
-                    <li><a href="prayer-meeting-materials.html">Prayer Meeting Materials</a></li>
-                    <li><a href="outerspace.html">Astronomy</a></li>
-                    <li><a href="articles.html">Articles</a></li>
-                    <li><a href="prayoftheday.html">Pray Now</a></li>
-                    <li><a href="stratus.html">Stratus</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>2024 10/14. The Gospel is only good news if it gets there on time - Carl Henry</p>
-        </div>
+      <div class="divider"></div>
+      <p><strong>Safety & Privacy.</strong> This is a personal tracker. Share sensitive info with extreme caution. Use initials or pseudonyms only. Consider using “region only” (e.g., “Kabul area”) rather than specific neighborhoods.</p>
     </footer>
+  </main>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const welcomeMessage = document.querySelector(".welcome-message");
-            if (welcomeMessage) {
-                welcomeMessage.classList.add("fade-in");
-            }
-        });
-    </script>
+  <!-- Add/Edit Modal -->
+  <dialog id="modal" style="max-width:720px;border:1px solid var(--border);border-radius:16px;background:#0c1016;color:var(--text)">
+    <form id="form" method="dialog" style="padding:16px 16px 6px 16px">
+      <h3 id="modalTitle">New Prayer Request</h3>
+      <div class="kv">
+        <div>
+          <label for="title">Title</label>
+          <input id="title" required placeholder="Short, specific title" />
+        </div>
+        <div>
+          <label for="urgency">Urgency</label>
+          <select id="urgency" required>
+            <option>Normal</option>
+            <option>High</option>
+            <option>Urgent</option>
+          </select>
+        </div>
+        <div>
+          <label for="category">Category</label>
+          <select id="category" required>
+            <option>Gospel Access</option>
+            <option>Church & Discipleship</option>
+            <option>Persecution & Safety</option>
+            <option>Government & Justice</option>
+            <option>Relief & Humanitarian</option>
+            <option>Refugees & Diaspora</option>
+            <option>Youth & Education</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div>
+          <label for="region">Region / Province (optional)</label>
+          <input id="region" placeholder="e.g., Kabul" />
+        </div>
+      </div>
+      <div style="margin-top:10px">
+        <label for="details">Details (avoid names/identifiers)</label>
+        <textarea id="details" placeholder="How to pray; keep people safe by avoiding identifying details."></textarea>
+        <div class="help">For safety: no names, no exact locations, no photos. Consider pseudonyms.</div>
+      </div>
+      <div class="row" style="margin-top:12px;align-items:center">
+        <div class="grow"></div>
+        <button class="btn ghost" value="cancel">Cancel</button>
+        <button class="btn primary" id="saveBtn" value="default">Save</button>
+      </div>
+    </form>
+  </dialog>
+
+  <div id="toast" class="toast hidden" role="status" aria-live="polite"></div>
+
+  <script>
+    // --- Data Layer (LocalStorage) ---
+    const KEY = 'af_prayers_v1';
+    /** @type {Array} */
+    let DATA = [];
+
+    function uid(){return Math.random().toString(36).slice(2)+Date.now().toString(36)}
+
+    function load(){
+      try{
+        const raw = localStorage.getItem(KEY);
+        DATA = raw ? JSON.parse(raw) : seed();
+      }catch(e){console.warn(e); DATA = seed()}
+    }
+    function save(){localStorage.setItem(KEY, JSON.stringify(DATA));}
+
+    function seed(){
+      const now = Date.now();
+      const d = [
+        {id:uid(), title:'Protection for house churches', details:'Believers meeting quietly this month need courage and wisdom.', category:'Church & Discipleship', region:'Kabul', urgency:'High', createdAt:now-86400000*2, prayers:[], answered:false},
+        {id:uid(), title:'Hope for refugees at border', details:'Families displaced need shelter, food, and gospel comfort.', category:'Refugees & Diaspora', region:'Herat', urgency:'Urgent', createdAt:now-86400000*5, prayers:[], answered:false},
+        {id:uid(), title:'Leaders of the nation', details:'Pray for justice, mercy, and peace; for violence to cease.', category:'Government & Justice', region:'National', urgency:'Normal', createdAt:now-86400000*1, prayers:[], answered:false},
+      ];
+      return d;
+    }
+
+    // --- Helpers ---
+    const $ = (sel, el=document)=>el.querySelector(sel);
+    const $$ = (sel, el=document)=>Array.from(el.querySelectorAll(sel));
+    function fmtDate(ts){return new Date(ts).toLocaleString()}
+    function weekAgo(){return Date.now()-7*86400000}
+    function toast(msg){const t=$('#toast'); t.textContent=msg; t.classList.remove('hidden'); setTimeout(()=>t.classList.add('hidden'), 2200)}
+
+    // --- Render ---
+    function render(){
+      const list = $('#list');
+      const answeredWrap = $('#answered');
+      const topWeek = $('#topWeek');
+      list.innerHTML = ''; answeredWrap.innerHTML=''; topWeek.innerHTML='';
+
+      const q = $('#q').value.trim().toLowerCase();
+      const u = $('#fUrgency').value;
+      const s = $('#fStatus').value;
+      const r = $('#fRegion').value.trim().toLowerCase();
+
+      let items = DATA.slice();
+      if(q) items = items.filter(x => (x.title+x.details+x.category+(x.region||'')).toLowerCase().includes(q));
+      if(u) items = items.filter(x => x.urgency===u);
+      if(s==='open') items = items.filter(x => !x.answered); else if(s==='answered') items = items.filter(x => x.answered);
+      if(r) items = items.filter(x => (x.region||'').toLowerCase().includes(r));
+
+      const sort = $('#sort').value;
+      if(sort==='recent') items.sort((a,b)=>b.createdAt-a.createdAt);
+      if(sort==='prayed') items.sort((a,b)=>countPrayers(b)-countPrayers(a));
+      if(sort==='urgency') items.sort((a,b)=>urgencyRank(b.urgency)-urgencyRank(a.urgency));
+
+      if(items.length===0) $('#empty').classList.remove('hidden'); else $('#empty').classList.add('hidden');
+
+      for(const x of items){ list.appendChild(renderItem(x)); }
+
+      // Answered list
+      const ans = DATA.filter(x=>x.answered).sort((a,b)=> (b.answeredAt||0)-(a.answeredAt||0));
+      if(ans.length===0) answeredWrap.innerHTML = '<div class="muted">No answered items yet.</div>';
+      else ans.slice(0,8).forEach(x=>{
+        const row = document.createElement('div');
+        row.className='request';
+        row.innerHTML = `<div><strong>${esc(x.title)}</strong><div class="muted">${esc(x.category)}${x.region? ' • '+esc(x.region):''}</div></div>
+        <div class="actions"><span class="badge answered">Answered</span><span class="muted">${new Date(x.answeredAt).toLocaleDateString()}</span></div>`;
+        answeredWrap.appendChild(row);
+      });
+
+      // Top this week
+      const week = DATA.map(x=>({x, c: x.prayers.filter(p=>p.ts>=weekAgo()).length}))
+                       .filter(z=>!z.x.answered)
+                       .sort((a,b)=>b.c-a.c).slice(0,6);
+      if(week.length===0) topWeek.innerHTML = '<div class="muted">No activity this week yet.</div>';
+      else week.forEach(({x,c})=>{
+        const row = document.createElement('div');
+        row.className='request';
+        row.innerHTML = `<div><strong>${esc(x.title)}</strong><div class="muted">${esc(x.category)}${x.region? ' • '+esc(x.region):''}</div></div>
+        <div class="actions"><span class="badge">Prayers: ${c}</span></div>`;
+        topWeek.appendChild(row);
+      });
+    }
+
+    function renderItem(x){
+      const el = document.createElement('div');
+      el.className = 'request';
+      const badges = `<span class="badge ${x.urgency.toLowerCase()}">${x.urgency}</span>` + (x.answered? '<span class="badge answered">Answered</span>':'' );
+      const prayed = countPrayers(x);
+      el.innerHTML = `
+        <div>
+          <h4>${esc(x.title)}</h4>
+          <div class="muted">${esc(x.category)}${x.region? ' • '+esc(x.region):''} • Added ${timeSince(x.createdAt)} ago</div>
+          ${x.details? `<div style="margin-top:6px">${nl2br(esc(x.details))}</div>`:''}
+          <div class="chips" style="margin-top:8px">${badges}</div>
+        </div>
+        <div class="actions">
+          <button class="btn" title="Record a prayer" ${x.answered? 'disabled':''} onclick="pray('${x.id}')">🙏 Pray (<span>${prayed}</span>)</button>
+          <button class="btn ghost" onclick="markAnswered('${x.id}')" ${x.answered? 'disabled':''} title="Mark as answered">Mark answered</button>
+          <button class="btn ghost" onclick="editItem('${x.id}')">Edit</button>
+          <button class="btn danger" onclick="removeItem('${x.id}')">Delete</button>
+        </div>`;
+      return el;
+    }
+
+    function countPrayers(x){ if(typeof x==='object') return x.prayers.length; const o=DATA.find(i=>i.id===x); return o?o.prayers.length:0 }
+    function urgencyRank(u){ return {Urgent:3, High:2, Normal:1}[u]||0 }
+
+    function timeSince(ts){
+      const s = Math.floor((Date.now()-ts)/1000);
+      const units=[['y',31536000],['mo',2592000],['w',604800],['d',86400],['h',3600],['m',60]];
+      for(const [k,sec] of units){ if(s>=sec) return Math.floor(s/sec)+k }
+      return s+"s";
+    }
+
+    function nl2br(s){ return s.replace(/\n/g,'<br>') }
+    function esc(s){ return (''+s).replace(/[&<>"']/g, m=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[m])) }
+
+    // --- Actions ---
+    function pray(id){
+      const x = DATA.find(i=>i.id===id); if(!x) return;
+      x.prayers.push({ts:Date.now()}); save(); render(); toast('Prayer recorded.');
+    }
+    function markAnswered(id){
+      const x = DATA.find(i=>i.id===id); if(!x) return;
+      if(x.answered) return;
+      x.answered = true; x.answeredAt = Date.now(); save(); render(); toast('Marked as answered. Praise God.');
+    }
+    function editItem(id){
+      const x = DATA.find(i=>i.id===id); if(!x) return;
+      $('#modalTitle').textContent = 'Edit Prayer Request';
+      $('#title').value = x.title; $('#details').value = x.details||''; $('#category').value = x.category; $('#urgency').value = x.urgency; $('#region').value = x.region||'';
+      $('#modal').returnValue=''; $('#modal').showModal();
+      $('#form').onsubmit = (e)=>{ e.preventDefault();
+        x.title=$('#title').value.trim(); x.details=$('#details').value.trim(); x.category=$('#category').value; x.urgency=$('#urgency').value; x.region=$('#region').value.trim();
+        save(); $('#modal').close(); render(); toast('Updated.');
+      };
+    }
+    function removeItem(id){
+      if(!confirm('Delete this request? This cannot be undone.')) return;
+      DATA = DATA.filter(i=>i.id!==id); save(); render(); toast('Deleted.');
+    }
+
+    // --- Modal New ---
+    function openNew(){
+      $('#modalTitle').textContent = 'New Prayer Request';
+      $('#title').value=''; $('#details').value=''; $('#category').value='Gospel Access'; $('#urgency').value='Normal'; $('#region').value='';
+      $('#modal').returnValue=''; $('#modal').showModal();
+      $('#form').onsubmit = (e)=>{ e.preventDefault();
+        const it = {
+          id: uid(),
+          title: $('#title').value.trim(),
+          details: $('#details').value.trim(),
+          category: $('#category').value,
+          urgency: $('#urgency').value,
+          region: $('#region').value.trim(),
+          createdAt: Date.now(),
+          prayers: [],
+          answered: false
+        };
+        if(!it.title){toast('Title required'); return;}
+        DATA.unshift(it); save(); $('#modal').close(); render(); toast('Added.');
+      };
+    }
+
+    // --- Filters & UI ---
+    function clearFilters(){ $('#q').value=''; $('#fUrgency').value=''; $('#fStatus').value='open'; $('#fRegion').value=''; $('#sort').value='recent'; render(); }
+
+    function buildQuickCats(){
+      const cats=['Gospel Access','Church & Discipleship','Persecution & Safety','Government & Justice','Relief & Humanitarian','Refugees & Diaspora','Youth & Education','Other'];
+      const wrap = $('#quickCats'); wrap.innerHTML='';
+      cats.forEach(c=>{
+        const b = document.createElement('button'); b.type='button'; b.className='chip'; b.textContent=c; b.onclick=()=>{ $('#q').value=c; render(); $$('button.chip',wrap).forEach(n=>n.classList.remove('active')); b.classList.add('active')};
+        wrap.appendChild(b);
+      });
+    }
+
+    // --- Export / Import ---
+    function exportJSON(){
+      const blob = new Blob([JSON.stringify(DATA,null,2)], {type:'application/json'});
+      const a = document.createElement('a'); a.href=URL.createObjectURL(blob); a.download='afghanistan_prayers.json'; a.click(); URL.revokeObjectURL(a.href);
+      toast('Exported JSON downloaded.');
+    }
+    function importJSON(file){
+      const r = new FileReader();
+      r.onload = () => {
+        try{
+          const incoming = JSON.parse(r.result);
+          if(!Array.isArray(incoming)) throw new Error('Invalid format');
+          // Merge by ID; prefer incoming
+          const map = new Map(DATA.map(x=>[x.id,x]));
+          for(const x of incoming){ map.set(x.id,x) }
+          DATA = Array.from(map.values()); save(); render(); toast('Imported.');
+        }catch(e){ alert('Import failed: '+e.message) }
+      };
+      r.readAsText(file);
+    }
+
+    // --- Dark Mode toggle ---
+    function applyDark(v){ document.documentElement.style.setProperty('--bg', v? '#0b0c10':'#f5f7fb'); document.documentElement.style.setProperty('--panel', v? '#111318':'#ffffff'); document.documentElement.style.setProperty('--text', v? '#eef2f7':'#0b0c10'); document.documentElement.style.setProperty('--muted', v? '#9aa4b2':'#4b5563'); document.documentElement.style.setProperty('--card', v? '#0f1115':'#ffffff'); document.documentElement.style.setProperty('--border', v? '#1f2430':'#e5e7eb'); }
+
+    // --- Init ---
+    (function(){
+      load(); buildQuickCats(); render();
+      $('#btnAdd').onclick = openNew;
+      $('#btnExport').onclick = exportJSON;
+      $('#fileImport').addEventListener('change', e=>{ if(e.target.files[0]) importJSON(e.target.files[0]) });
+      $('#q').oninput = render; $('#fUrgency').onchange=render; $('#fStatus').onchange=render; $('#fRegion').oninput=render; $('#sort').onchange=render;
+      $('#btnClearFilters').onclick = clearFilters;
+      $('#darkToggle').onchange = (e)=> applyDark(e.target.checked);
+      applyDark(true);
+    })();
+  </script>
 </body>
 </html>
