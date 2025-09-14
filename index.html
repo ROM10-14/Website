@@ -93,6 +93,10 @@
           e.preventDefault();
           dlg.close();
         }
+        const cancelBtn = document.getElementById('cancelBtn');
+if (cancelBtn) {
+  cancelBtn.onclick = () => dlg.close();
+}
       });
     }
 
@@ -435,8 +439,6 @@
         if(!it.title){toast('Title required'); return;}
         DATA.unshift(it); save(); $('#modal').close(); render(); toast('Added.');
       };
-      document.getElementById('cancelBtn').onclick = () => {
-  document.getElementById('modal').close();
 };
     }
 
