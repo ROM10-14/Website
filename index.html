@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+Here is what I want: <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
@@ -73,45 +73,7 @@
     input:checked + .slider:before{transform:translateX(22px)}
     .sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
   </style>
-  <style>
-  /* force white for labels in Filters/Focus */
-  label { color: var(--text) !important; }
-  /* ensure quick category chips are white too */
-  .chip { color: #fff !important; }
-</style>
-
 </head>
-  <script>
-  (function () {
-    const dlg = document.getElementById('modal');
-    const form = document.getElementById('form');
-
-    // If the submitter was the Cancel button, just close and do nothing.
-    if (form) {
-      form.addEventListener('submit', function (e) {
-        if (e.submitter && e.submitter.value === 'cancel') {
-          e.preventDefault();
-          dlg.close();
-        }
-        const cancelBtn = document.getElementById('cancelBtn');
-if (cancelBtn) {
-  cancelBtn.onclick = () => dlg.close();
-}
-      });
-    }
-
-    // Also close when clicking the backdrop (outside the dialog box)
-    if (dlg) {
-      dlg.addEventListener('click', (e) => {
-        const r = dlg.getBoundingClientRect();
-        const inBox =
-          e.clientX >= r.left && e.clientX <= r.right &&
-          e.clientY >= r.top  && e.clientY <= r.bottom;
-        if (!inBox) dlg.close();
-      });
-    }
-  })();
-</script>
 <body>
   <header>
     <div class="container">
@@ -226,7 +188,7 @@ if (cancelBtn) {
 
   <!-- Add/Edit Modal -->
   <dialog id="modal" style="max-width:720px;border:1px solid var(--border);border-radius:16px;background:#0c1016;color:var(--text)">
-    < id="" method="dialog" style="padding:16px 16px 6px 16px">
+    <form id="form" method="dialog" style="padding:16px 16px 6px 16px">
       <h3 id="modalTitle">New Prayer Request</h3>
       <div class="kv">
         <div>
@@ -269,7 +231,6 @@ if (cancelBtn) {
         <button class="btn ghost" value="cancel">Cancel</button>
         <button class="btn primary" id="saveBtn" value="default">Save</button>
       </div>
-      <form id="form" novalidate style="padding:16px 16px 6px 16px">
     </form>
   </dialog>
 
@@ -439,7 +400,6 @@ if (cancelBtn) {
         if(!it.title){toast('Title required'); return;}
         DATA.unshift(it); save(); $('#modal').close(); render(); toast('Added.');
       };
-};
     }
 
     // --- Filters & UI ---
